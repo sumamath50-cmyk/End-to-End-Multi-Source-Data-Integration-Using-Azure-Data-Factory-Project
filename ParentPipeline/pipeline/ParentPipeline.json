@@ -1,0 +1,49 @@
+{
+    "name": "ParentPipeline",
+    "properties": {
+        "activities": [
+            {
+                "name": "Pipeline 1",
+                "type": "ExecutePipeline",
+                "dependsOn": [],
+                "policy": {
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "pipelineManager",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true
+                }
+            },
+            {
+                "name": "Pipeline 2",
+                "type": "ExecutePipeline",
+                "dependsOn": [
+                    {
+                        "activity": "Pipeline 1",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "onlyselectedfiles",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true
+                }
+            }
+        ],
+        "annotations": [],
+        "lastPublishTime": "2026-09-04T19:51:28Z"
+    },
+    "type": "Microsoft.DataFactory/factories/pipelines"
+}
