@@ -1,0 +1,24 @@
+{
+    "name": "mantrigger",
+    "properties": {
+        "annotations": [],
+        "runtimeState": "Started",
+        "pipelines": [
+            {
+                "pipelineReference": {
+                    "referenceName": "ParentPipeline",
+                    "type": "PipelineReference"
+                }
+            }
+        ],
+        "type": "BlobEventsTrigger",
+        "typeProperties": {
+            "blobPathBeginsWith": "/source/blobs/csvfiles/Fact_Sales_1.csv",
+            "ignoreEmptyBlobs": true,
+            "scope": "/subscriptions/06d42564-6985-4292-b076-de58931120ae/resourceGroups/RG-Learn/providers/Microsoft.Storage/storageAccounts/mydatalakelearn",
+            "events": [
+                "Microsoft.Storage.BlobCreated"
+            ]
+        }
+    }
+}
