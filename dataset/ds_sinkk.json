@@ -1,0 +1,24 @@
+{
+    "name": "ds_sinkk",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "lake_linkservice",
+            "type": "LinkedServiceReference"
+        },
+        "annotations": [],
+        "type": "DelimitedText",
+        "typeProperties": {
+            "location": {
+                "type": "AzureBlobFSLocation",
+                "folderPath": "Dataflow",
+                "fileSystem": "reporting"
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+        },
+        "schema": []
+    },
+    "type": "Microsoft.DataFactory/factories/datasets"
+}
