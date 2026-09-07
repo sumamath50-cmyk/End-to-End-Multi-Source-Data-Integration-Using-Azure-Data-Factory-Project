@@ -1,6 +1,0 @@
-selected resource name:		ParentPipeline
-selected resource type:		pipeline
-factory name:			ADF-Learncource
-factory location:		eastus
-subscription id:		06d42564-6985-4292-b076-de58931120ae
-time of download (UTC):		Mon, 07 Sep 2026 18:08:21 GMT
